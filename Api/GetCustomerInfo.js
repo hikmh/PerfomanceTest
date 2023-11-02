@@ -27,7 +27,7 @@ function getFlashsale(){
     const url = 'https://staging-superapp-api.superapp.co.id/api/v5/app/customer/info'
     const response = http.get(url,{headers});
     check(response,{
-        'Success Get Flash Sale' : (r) => r.status === 200,
+        'Get Customer Info' : (r) => r.status === 200,
     });
 }
 function Login(){
