@@ -10,9 +10,6 @@ export const options = {
 };
 export default function (){
 
-    // group('Login', () => {
-    //    Login();
-    // })
     group('Flash Sale', () => {
         getFlashsale();
     })
@@ -24,22 +21,22 @@ function getFlashsale(){
         'Authorization': `Bearer ${tokenEndpoint}`,
         'content-type': 'application/json'
     }
-    const url = ('https://staging-superapp-api.superapp.co.id/api/v5/app/flash-sale?city=kota-surabaya')
+    const url = ('https://staging-superapp-api.superapp.co.id/api/v5/app/product/catalogue?page=1&city=kota-surabaya')
     const response = http.get(url,{headers});
     check(response,{
-        'Success Get Flash Sale' : (r) => r.status === 200,
+        'Success to Get Product' : (r) => r.status === 200,
     });
 }
 function Login(){
-    const tokenEndpoint = 'https://staging-superapp-api.superapp.co.id/api/v5/app/customer/info'
+    const tokenEndpoint = 'https://staging-superapp-api.superapp.co.id/api/v5/app/auth/login'
     const payload = JSON.stringify({
         "phone": "U2FsdGVkX198nb9BaIK9iNV5WwkdKD9YSa49VOQhFKo=",
         "pin" : "U2FsdGVkX19KTJ2cAox1IFJqRMu/qa341WwOCdui79E=",
         "app_version":"5.02.00"
     });
-    // const headers = {
-    //     'content-type': 'application/json'
-    // };
+    const headers = {
+        'content-type': 'application/json'
+    };
     const response = http.post(tokenEndpoint, payload, {headers} );
     check(response,{
         'Success Get Token' : (r) => r.status === 202,
