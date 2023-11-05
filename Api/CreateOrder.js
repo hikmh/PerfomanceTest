@@ -1,5 +1,6 @@
 import http from 'k6/http';
 import { sleep, check, group } from 'k6';
+import Login from "./Login";
 // import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 export const options = {
@@ -15,7 +16,8 @@ export default function (){
     })
 }
 function Addtocart() {
-    const accessToken = testScenario1();
+    // const getaccesstoken = Login()
+    const accessToken = ''
     const headers = {
         'Authorization': `Bearer ${accessToken}`,
         'content-type': 'application/json',

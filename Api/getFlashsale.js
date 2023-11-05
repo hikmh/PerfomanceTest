@@ -19,6 +19,7 @@ export default function (){
 }
 
 function getFlashsale(){
+    // const accessgettoken = Login();
     const tokenEndpoint = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEzNTQsImxldmVsIjoiYWdlbnQiLCJuYW1lIjoiVXNlckdEQUIiLCJ1c2VyX3R5cGUiOjYsImFwcF92ZXJzaW9uIjoiNS4wMS4wMCIsImlzX3Rlc3RpbmciOjAsImlhdCI6MTY5ODkxMTQ4NSwiZXhwIjo0MjkwOTExNDg1fQ.hUQn_sLPcWE11mXDrLwhq_AxLcxXiIj770zx4Po31kg'
     const headers = {
         'Authorization': `Bearer ${tokenEndpoint}`,

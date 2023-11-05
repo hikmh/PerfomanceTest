@@ -10,7 +10,7 @@ export const options = {
 };
 export default function (){
 
-    group('Flash Sale', () => {
+    group('Success To Get Product', () => {
         GetCatalogProduct();
     })
 }
