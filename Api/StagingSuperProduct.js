@@ -10,21 +10,20 @@ import { sleep, check, group } from 'k6';
 // };
 export default function (){
 
-    group('Success To Get Product', () => {
-        GetCatalogProduct();
+    group('Success To Get Super Product', () => {
+        SuperProduct();
     })
 }
 
-function GetCatalogProduct(){
-    const tokenEndpoint = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE0MDAsImxldmVsIjoiYWdlbnQiLCJuYW1lIjoiaGlrbWFoIHNhbGFtIiwidXNlcl90eXBlIjo2LCJhcHBfdmVyc2lvbiI6IjUuMDEuMDAiLCJpc190ZXN0aW5nIjowLCJpYXQiOjE2OTkxNzEyMTUsImV4cCI6NDI5MTE3MTIxNX0.s3y1hrBUKp9UEqVp2w0tf6JOczfKTrCsagbPl68-XfM'
+function SuperProduct(){
+    // const tokenEndpoint = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE0MDAsImxldmVsIjoiYWdlbnQiLCJuYW1lIjoiaGlrbWFoIHNhbGFtIiwidXNlcl90eXBlIjo2LCJhcHBfdmVyc2lvbiI6IjUuMDEuMDAiLCJpc190ZXN0aW5nIjowLCJpYXQiOjE2OTkxNzEyMTUsImV4cCI6NDI5MTE3MTIxNX0.s3y1hrBUKp9UEqVp2w0tf6JOczfKTrCsagbPl68-XfM'
     const headers = {
-        'Authorization': `Bearer ${tokenEndpoint}`,
-        'content-type': 'application/json'
+        'X-TYPESENSE-API-KEY' : '165b230f-b5f7-4c2c-b953-8b0af272152d'
     }
-    const url = 'https://staging-superapp-api.superapp.co.id/api/v5/app/product/catalogue?page=1&city=kota-surabaya'
+    const url = 'http://dev.superagen.id:8108/collections/StagingSuperProduct-1/documents/search?q=minyak&query_by=name'
     const response = http.get(url,{headers});
     check(response,{
-        'Success to Get Product' : (r) => r.status === 200,
+        'Success to Get Super Product' : (r) => r.status === 200,
     });
 }
 // function Login(){

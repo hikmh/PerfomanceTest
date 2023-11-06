@@ -10,9 +10,6 @@ export const options = {
 };
 export default function (){
 
-    // group('Login', () => {
-    //    Login();
-    // })
     group('Flash Sale', () => {
         getFlashsale();
     })
